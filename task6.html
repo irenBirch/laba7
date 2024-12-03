@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <h3>Завдання </h3>
+        <p>Маркований список:</p>
+        <ul id="myList">
+            <li>32748</li>
+            <li>23</li>
+            <li>0</li>
+            <!-- Додайте інші елементи за потреби -->
+        </ul>
+        <button onclick="doubleValues()">Подвоїти</button>
+    </div>
+
+    <script>
+        function doubleValues() {
+            // Отримання списку
+            var myList = document.getElementById("myList");
+            
+            // Отримання всіх елементів списку
+            var listItems = myList.getElementsByTagName("li");
+
+            // Подвоєння значення у кожному елементі списку
+            for (var i = 0; i < listItems.length; i++) {
+                var currentValue = parseInt(listItems[i].innerText);
+                var newValue = currentValue * 2;
+                listItems[i].innerText = newValue;
+            }
+        }
+    </script>
+</body>
+</html>

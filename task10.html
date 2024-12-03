@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div id="controls">
+        <input type="number" min="1" max="100" step="1" />
+        <button type="button" data-create onclick="createBoxes()">Create</button>
+        <button type="button" data-destroy onclick="destroyBoxes()">Destroy</button>
+    </div>
+    <div id="boxes"></div>
+
+    <script>
+        function getRandomHexColor() {
+            return `#${Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0')}`;
+        }
+
+        function createBoxes() {
+            var input = document.querySelector('#controls input');
+            var amount = input.value;
+
+            if (amount >= 1 && amount <= 100) {
+                var boxesContainer = document.getElementById('boxes');
+                boxesContainer.innerHTML = ''; 
+
+                var boxSize = 30;
+
+                for (var i = 0; i < amount; i++) {
+                    var box = document.createElement('div');
+                    box.style.width = box.style.height = `${boxSize}px`;
+                    box.style.backgroundColor = getRandomHexColor();
+
+                    boxesContainer.appendChild(box);
+
+                    boxSize += 10; 
+                }
+
+                input.value = ''; 
+            } else {
+                alert('Please enter a number between 1 and 100.');
+            }
+        }
+
+        function destroyBoxes() {
+            var boxesContainer = document.getElementById('boxes');
+            boxesContainer.innerHTML = ''; 
+        }
+    </script>
+</body>
+</html>

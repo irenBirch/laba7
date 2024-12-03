@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #square {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            margin: 20px;
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h3>Завдання 4</h3>
+        <p>Натискайте кнопки для зміни розміру квадрата:</p>
+        <div id="square"></div>
+        <button onclick="decreaseSize()">Зменшити</button>
+        <button onclick="increaseSize()">Збільшити</button>
+    </div>
+
+    <script>
+        var squareSize = 100;
+
+        function decreaseSize() {
+            // Зменшення розміру квадрата на 15 пікселів
+            squareSize -= 15;
+            updateSquareSize();
+        }
+
+        function increaseSize() {
+            // Збільшення розміру квадрата на 15 пікселів
+            squareSize += 15;
+            updateSquareSize();
+        }
+
+        function updateSquareSize() {
+            // Оновлення розміру квадрата
+            var square = document.getElementById("square");
+            square.style.width = squareSize + "px";
+            square.style.height = squareSize + "px";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div>
+        <h3>Завдання 2</h3>
+        <p>Введіть текст у два поля:</p>
+        <input type="text" id="input1" placeholder="Поле 1">
+        <input type="text" id="input2" placeholder="Поле 2">
+        <button onclick="swapContent()">SWAP ME</button>
+    </div>
+
+    <script>
+        function swapContent() {
+            // Отримання значень з двох полів введення
+            var input1 = document.getElementById("input1");
+            var input2 = document.getElementById("input2");
+
+            // Обмін вмістом
+            var temp = input1.value;
+            input1.value = input2.value;
+            input2.value = temp;
+        }
+    </script>
+</body>
+</html>
